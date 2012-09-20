@@ -20,6 +20,7 @@ Telepathy.prototype.password = function(secret, options) {
 	    result, hash, remainder;
 
 	while (password.length < length) {
+		// create hash, and make it a big integer
 		hash = new BigInteger(CryptoJS.HmacSHA512(data + password, secret).toString(), 16);
 
 		// convert hash to an arbitrary base
@@ -33,7 +34,6 @@ Telepathy.prototype.password = function(secret, options) {
 			if (hash.compareTo(base) == -1 && password.length < length)
 				password = alphabet[hash] + password;
 		}
-
 	}
 
 	return password;
