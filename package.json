@@ -1,0 +1,9 @@
+{
+	"name": "telepathy",
+	"version": "0.0.1",
+	"private": true,
+	"main": "telepathy.js",
+	"dependencies": {
+		"bigdecimal": "*"
+	}
+}

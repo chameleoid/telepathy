@@ -1,0 +1,21 @@
+#!/bin/zsh
+require=$(<<EX
+// Patch for require()
+if (typeof module != 'undefined')
+	module.exports = CryptoJS
+EX)
+
+
+if [[ ! -e crypto-js ]]; then
+	mkdir crypto-js
+fi
+
+function get() {
+	print Getting $1...
+	curl -s http://crypto-js.googlecode.com/svn/tags/3.0/build/rollups/$1.js > crypto-js/$1.js
+
+	print Patching $1...
+	print "$require" >> crypto-js/$1.js
+}
+
+get hmac-sha512
