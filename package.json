@@ -1,9 +1,41 @@
 {
 	"name": "telepathy",
-	"version": "0.0.1",
-	"private": true,
-	"main": "telepathy.js",
+	"description": "A telepathic password manager",
+	"version": "0.1.0",
+	"homepage": "https://github.com/rummik/telepathy",
+	"author": {
+		"name": "rummik",
+		"email": "r@9k1.us",
+		"url": "http://www.rummik.com/"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/rummik/telepathy.git"
+	},
+	"bugs": {
+		"url": "https://github.com/rummik/telepathy/issues"
+	},
+	"licenses": [
+		{
+			"type": "MPL",
+			"url": "https://github.com/rummik/telepathy/blob/master/LICENSE-MPL"
+		}
+	],
+	"main": "lib/telepathy",
+	"bin": "bin/telepathy",
+	"engines": {
+		"node": ">= 0.6.0"
+	},
+	"scripts": {
+		"test": "grunt test",
+		"preinstall": "./build"
+	},
 	"dependencies": {
-		"bigdecimal": "*"
-	}
+		"bigdecimal": "*",
+		"optimist": "*"
+	},
+	"devDependencies": {
+		"grunt": "~0.3.17"
+	},
+	"keywords": []
 }

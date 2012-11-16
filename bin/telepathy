@@ -1,0 +1,71 @@
+#!/usr/bin/env node
+var i, password, telepathy, config, argv,
+    Telepathy = require('../lib/telepathy'),
+    fs        = require('fs'),
+    opts      = require('optimist');
+
+opts = opts.options('c', {
+	describe: 'config file',
+	alias: 'config',
+	default: process.env.HOME + '/.telepathy.json'
+});
+
+if (!fs.existsSync(opts.argv.config)) {
+	console.error('Creating default config at:', opts.argv.config);
+	console.error('Important!  You _must_ add your own secret key to this file!');
+	fs.writeFileSync(opts.argv.config, fs.readFileSync(__dirname + '/../example/telepathy.json'));
+	process.exit();
+}
+
+config = JSON.parse(fs.readFileSync(opts.argv.config));
+
+if (!config.secret) {
+	console.error('Option "secret" missing or empty in', opts.argv.config);
+	console.error('Did you remember to edit the file?');
+	process.exit();
+}
+
+opts = opts.usage('Telepathically manage passwords.\nUsage: $0').options({
+	d: {
+		alias: 'domain',
+		demand: true
+	},
+	u: {
+		default: config.username || process.env.USER,
+		alias: 'username'
+	},
+	l: {
+		describe: 'password length',
+		alias: 'length',
+		default: config.length || 10
+	},
+	n: {
+		describe: 'number of passwords to display',
+		alias: 'count',
+		default: config.count || 5
+	},
+	i: {
+		describe: 'starting password index',
+		alias: 'index',
+		default: config.index || 0
+	},
+	s: {
+		describe: 'safe mode (base 62 instead of 94)',
+		boolean: true,
+		alias: 'safe',
+		default: config.safe || false
+	}
+});
+
+argv = opts.argv;
+
+telepathy = new Telepathy({
+	secret: config.secret,
+	length: argv.length,
+	username: argv.username,
+	domain: argv.domain,
+	alphabet: argv.safe ? Telepathy.alphabet.base62 : Telepathy.alphabet.base94
+});
+
+for (i=argv.index; i<=argv.index + argv.count; i++)
+	console.log(telepathy.password(i));

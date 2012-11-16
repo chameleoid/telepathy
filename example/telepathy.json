@@ -1,0 +1,20 @@
+{
+	"//": "Default username -- leave it blank to autodetect",
+	"username": "",
+
+	"//": "Number of passwords to display by default",
+	"count": 5,
+
+	"//": "How long the passwords ought to be",
+	"length": 10,
+
+	"//": "Starting index",
+	"index": 0,
+
+	"//": "Should we generate passwords that could break insecure login forms?",
+	"safe": false,
+
+	"//": "Your secret key.  Should be something lengthy and memorable, like a couple sentences from a book you like.",
+	"//": "DO NOT SHARE IT WITH ANYONE!",
+	"secret": ""
+}
