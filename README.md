@@ -10,11 +10,13 @@ Telepathically manage passwords.
 Usage: telepathy
 
 Options:
-  --length, -l    password length                 [default: 10]
-  --count, -n     number of passwords to display  [default: 5]
-  --safe, -s      use base 62 instead of 96       [boolean]  [default: false]
-  --domain, -d                                    [required]
-  --username, -u
+  -c, --config    config file                        [default: "/path/to/home/.telepathy.json"]
+  -l, --length    password length                    [default: 10]
+  -n, --count     number of passwords to display     [default: 5]
+  -i, --index     starting password index            [default: 0]
+  -s, --safe      safe mode (base 62 instead of 94)  [boolean]  [default: false]
+  -d, --domain                                       [required]
+  -u, --username                                     [default: "you"]
 ```
 
 ## Documentation
