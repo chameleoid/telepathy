@@ -11,7 +11,7 @@
 	"//": "Starting index",
 	"index": 0,
 
-	"//": "Should we generate passwords that could break insecure login forms?",
+	"//": "Don't generate passwords that could break insecure login forms?",
 	"safe": false,
 
 	"//": "Your secret key.  Should be something lengthy and memorable, like a couple sentences from a book you like.",
