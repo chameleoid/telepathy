@@ -67,5 +67,5 @@ telepathy = new Telepathy({
 	alphabet: argv.safe ? Telepathy.alphabet.base62 : Telepathy.alphabet.base94
 });
 
-for (i=argv.index; i<=argv.index + argv.count; i++)
+for (i=argv.index; i<argv.index + argv.count; i++)
 	console.log(telepathy.password(i));
