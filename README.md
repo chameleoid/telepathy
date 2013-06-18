@@ -1,5 +1,5 @@
-# telepathy
-A telepathic password manager
+# telepathy [![](http://badgr.co/gittip/rummik.png)](https://www.gittip.com/rummik/)
+A telepathic password manager 
 
 ## Getting Started
 Install with: `npm install -g telepathy`
