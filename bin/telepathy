@@ -62,7 +62,7 @@ argv = opts.argv;
 telepathy = new Telepathy({
 	secret: config.secret,
 	length: argv.length,
-	username: argv.username,
+	user: argv.username,
 	domain: argv.domain,
 	alphabet: argv.safe ? Telepathy.alphabet.base62 : Telepathy.alphabet.base94
 });
