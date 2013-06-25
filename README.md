@@ -1,4 +1,4 @@
-# telepathy  [![Testing](https://secure.travis-ci.org/rummik/telepathy.png)](http://travis-ci.org/rummik/telepathy) [![](http://badgr.co/gittip/rummik.png)](https://www.gittip.com/rummik/)
+# Telepathy  [![Testing](https://secure.travis-ci.org/rummik/telepathy.png)](http://travis-ci.org/rummik/telepathy) [![](http://badgr.co/gittip/rummik.png)](https://www.gittip.com/rummik/)
 A telepathic password manager 
 
 ## Getting Started
@@ -17,6 +17,15 @@ Options:
   -s, --safe      safe mode (base 62 instead of 94)  [boolean]  [default: false]
   -d, --domain                                       [required]
   -u, --username                                     [default: "you"]
+```
+
+```
+> telepathy -d example.com
+:=.-E;9W[t
+2v{/%L\B|n
+@^\dqwIlJ^
+YjIvtR@9#w
+K5l]Qr{/x3
 ```
 
 ## Documentation
