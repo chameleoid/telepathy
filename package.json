@@ -35,7 +35,10 @@
 		"optimist": "*"
 	},
 	"devDependencies": {
-		"grunt": "~0.3.17"
+		"grunt": "~0.4.1",
+		"grunt-contrib-jshint": "~0.4.3",
+		"grunt-contrib-nodeunit": "~0.1.2",
+		"grunt-contrib-watch": "~0.4.3"
 	},
 	"keywords": [
 		"telepathic",
