@@ -50,5 +50,5 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 _(Nothing yet)_
 
 ## License
-Copyright (c) 2012 rummik
+Copyright (c) 2012-2013 rummik
 Licensed under the MPL license.
