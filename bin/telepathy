@@ -26,6 +26,12 @@ if (!config.secret) {
 	process.exit();
 }
 
+if (typeof config.safe != 'undefined') {
+	console.error('Deprecated option "safe" in use in', opts.argv.config);
+	console.error('Please use "lax" instead');
+	console.error('This option will be removed in later versions');
+}
+
 opts = opts.usage('Telepathically manage passwords.\nUsage: $0\nVersion: ' + json.version).options({
 	d: {
 		alias: 'domain',
@@ -51,21 +57,31 @@ opts = opts.usage('Telepathically manage passwords.\nUsage: $0\nVersion: ' + jso
 		default: config.index || 0
 	},
 	s: {
-		describe: 'safe mode (base 62 instead of 94)',
+		describe: '[deprecated] see lax',
 		boolean: true,
 		alias: 'safe',
-		default: config.safe || false
+		default: false
+	},
+	x: {
+		describe: 'lax mode (use base 62 instead of 94)',
+		boolean: true,
+		alias: 'lax',
+		default: (typeof config.lax != 'undefined' ? config.lax : config.safe) || false
 	}
 });
 
 argv = opts.argv;
+
+if (argv.safe) {
+	console.error('Deprecated option "-s" or "--safe" used, please use "-x" or "--lax" instead');
+}
 
 telepathy = new Telepathy({
 	secret: config.secret,
 	length: argv.length,
 	user: argv.username,
 	domain: argv.domain,
-	alphabet: argv.safe ? Telepathy.alphabet.base62 : Telepathy.alphabet.base94
+	alphabet: (argv.lax || argv.safe) ? Telepathy.alphabet.base62 : Telepathy.alphabet.base94
 });
 
 for (i=argv.index; i<argv.index + argv.count; i++)
