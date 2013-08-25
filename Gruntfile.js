@@ -23,8 +23,9 @@ module.exports = function(grunt) {
 
 		jshint: {
 			gruntfile: 'Gruntfile.js',
+			bin: 'bin/telepathy',
 			dist: 'lib/**/*.{js,json}',
-			test: '<%= nodeunit.test %>',
+			test: ['test/**/*.json', '<%= nodeunit.test %>'],
 
 			options: {
 				curly: false,
