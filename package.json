@@ -36,9 +36,9 @@
 	},
 	"devDependencies": {
 		"grunt": "~0.4.1",
-		"grunt-contrib-jshint": "~0.4.3",
-		"grunt-contrib-nodeunit": "~0.1.2",
-		"grunt-contrib-watch": "~0.4.3"
+		"grunt-contrib-jshint": "~0.6.3",
+		"grunt-contrib-nodeunit": "~0.2.0",
+		"grunt-contrib-watch": "~0.5.2"
 	},
 	"keywords": [
 		"telepathic",
