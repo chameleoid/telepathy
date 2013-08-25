@@ -1,4 +1,4 @@
-# Telepathy  [![Testing](https://secure.travis-ci.org/rummik/telepathy.png)](http://travis-ci.org/rummik/telepathy) [![](http://badgr.co/gittip/rummik.png)](https://www.gittip.com/rummik/)
+# Telepathy  [![Testing](https://secure.travis-ci.org/rummik/telepathy.png)](http://travis-ci.org/rummik/telepathy) [![Dependency Status](https://gemnasium.com/rummik/telepathy.png)](https://gemnasium.com/rummik/telepathy) [![](http://badgr.co/gittip/rummik.png)](https://www.gittip.com/rummik/)
 A telepathic password manager 
 
 ## Getting Started
