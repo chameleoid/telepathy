@@ -67,6 +67,11 @@ opts = opts.usage('Telepathically manage passwords.\nUsage: $0\nVersion: ' + jso
 		boolean: true,
 		alias: 'lax',
 		default: (typeof config.lax != 'undefined' ? config.lax : config.safe) || false
+	},
+	a: {
+		describe: 'hashing algorithm to use',
+		alias: 'algorithm',
+		default: 'SHA3'
 	}
 });
 
@@ -76,12 +81,17 @@ if (argv.safe) {
 	console.error('Deprecated option "-s" or "--safe" used, please use "-x" or "--lax" instead');
 }
 
+if (!(argv.algorithm.toUpperCase() in Telepathy.algorithms)) {
+	console.error('Invalid algorithm supplied');
+}
+
 telepathy = new Telepathy({
 	secret: config.secret,
 	length: argv.length,
 	user: argv.username,
 	domain: argv.domain,
-	alphabet: (argv.lax || argv.safe) ? Telepathy.alphabet.base62 : Telepathy.alphabet.base94
+	alphabet: (argv.lax || argv.safe) ? Telepathy.alphabet.base62 : Telepathy.alphabet.base94,
+	algorithm: argv.algorithm
 });
 
 for (i=argv.index; i<argv.index + argv.count; i++)
