@@ -1,5 +1,3 @@
-var Telepathy = require('../lib/telepathy.js');
-
 /*
   ======== A Handy Little Nodeunit Reference ========
   https://github.com/caolan/nodeunit
@@ -20,20 +18,22 @@ var Telepathy = require('../lib/telepathy.js');
     test.ifError(value)
 */
 
+var Telepathy = require('../lib/telepathy.js');
+
 exports['password'] = {
 	'no args': function(test) {
 		test.expect(1);
-		test.equal(new Telepathy().password(), 'lMOTgo2kUx');
+		test.equal(new Telepathy().password(), 'aIN8v2T3E6');
 		test.done();
 	},
 	'base16 alphabet': function(test) {
 		test.expect(1);
-		test.equal(new Telepathy().password({ alphabet: Telepathy.alphabet.base16 }), '2247225d47');
+		test.equal(new Telepathy().password({ alphabet: Telepathy.alphabet.base16 }), '3d3670680e');
 		test.done();
 	},
 	'length 5': function(test) {
 		test.expect(1);
-		test.equal(new Telepathy().password({ length: 5 }), 'o2kUx');
+		test.equal(new Telepathy().password({ length: 5 }), '2T3E6');
 		test.done();
 	}
 };

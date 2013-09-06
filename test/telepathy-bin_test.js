@@ -29,7 +29,7 @@ exports['telepathy-bin'] = {
 			telepathy + '-d example.com',
 			function(error, stdout, stderr) {
 				if (!error && !stderr)
-					test.equal(stdout, 'DfQi/8`jh-\nrl<kFYRKZ.\nM~U+UVC;`\\\n5*ZX29$EJ8\nY#QMnk8[72\n');
+					test.equal(stdout, 'iIw+B2uWs,\nu@FJ.K-s{:\n(Eqo-9w.KV\nf#2K@XEowy\n0vU7ub/#&+\n');
 
 				test.done();
 			}
@@ -43,10 +43,10 @@ exports['telepathy-bin'] = {
 			telepathy + '-d example.com -u foo',
 			function(error, stdout, stderr) {
 				if (!error && !stderr) {
-					test.equal(stdout, ':iwvUjE,#g\nhk)\\ceP@0e\np*H-iczWH-\n4PVU)OSz9D\nM{}8-m?;ls\n');
+					test.equal(stdout, 'J%HuXXpSpG\nm:B}vq"=g<\n*lbNskrL}O\nsu,rYsOTyD\nLMrhYYpN(%\n');
 
 					// pulled from 'default' results
-					test.notEqual(stdout, 'DfQi/8`jh-\nrl<kFYRKZ.\nM~U+UVC;`\\\n5*ZX29$EJ8\nY#QMnk8[72\n');
+					test.notEqual(stdout, 'iIw+B2uWs,\nu@FJ.K-s{:\n(Eqo-9w.KV\nf#2K@XEowy\n0vU7ub/#&+\n');
 				}
 
 				test.done();
@@ -61,7 +61,7 @@ exports['telepathy-bin'] = {
 			telepathy + '-d example.com -i 4',
 			function(error, stdout, stderr) {
 				if (!error && !stderr)
-					test.equal(stdout, 'Y#QMnk8[72\ne~*Xk;vT?X\n.KGC~kQY5>\n,"Vt7c\'rV.\nKtL#IdU#09\n');
+					test.equal(stdout, '0vU7ub/#&+\n*oNo2h/Gi#\ne$!MCvZ=+M\n_"P%+(DFc7\nazT%$lCeLk\n');
 
 				test.done();
 			}
@@ -75,7 +75,7 @@ exports['telepathy-bin'] = {
 			telepathy + '-d example.com -l 4',
 			function(error, stdout, stderr) {
 				if (!error && !stderr)
-					test.equal(stdout, '`jh-\nQi/8\nZ.Df\nFYRK\nrl<k\n');
+					test.equal(stdout, 'uWs,\nw+B2\n{:iI\n.K-s\nu@FJ\n');
 
 				test.done();
 			}
@@ -89,7 +89,7 @@ exports['telepathy-bin'] = {
 			telepathy + '-d example.com -x',
 			function(error, stdout, stderr) {
 				if (!error && !stderr)
-					test.equal(stdout, '4pyMxGx7VK\nhz44M51u0S\njw61jEM58X\nzvhJ1xLwEy\nMN60IKYhDX\n');
+					test.equal(stdout, 'dQiyeU81Tb\n9qaYRNSKBw\nzVwWEd9plt\nCagcl4MboD\n2UmwQct5wm\n');
 
 				test.done();
 			}
@@ -103,7 +103,7 @@ exports['telepathy-bin'] = {
 			telepathy + '-d example.com -n 10',
 			function(error, stdout, stderr) {
 				if (!error && !stderr)
-					test.equal(stdout, 'DfQi/8`jh-\nrl<kFYRKZ.\nM~U+UVC;`\\\n5*ZX29$EJ8\nY#QMnk8[72\ne~*Xk;vT?X\n.KGC~kQY5>\n,"Vt7c\'rV.\nKtL#IdU#09\ncW(G\\N,oPo\n');
+					test.equal(stdout, 'iIw+B2uWs,\nu@FJ.K-s{:\n(Eqo-9w.KV\nf#2K@XEowy\n0vU7ub/#&+\n*oNo2h/Gi#\ne$!MCvZ=+M\n_"P%+(DFc7\nazT%$lCeLk\nX3&<|zv"5,\n');
 
 				test.done();
 			}
