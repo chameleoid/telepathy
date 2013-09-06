@@ -18,6 +18,11 @@ module.exports = function(grunt) {
 			test: {
 				files: '<%= jshint.test %>',
 				tasks: ['jshint:test', 'nodeunit:test']
+			},
+
+			bin: {
+				files: '<%= jshint.bin %>',
+				tasks: ['jshint:bin', 'nodeunit:test']
 			}
 		},
 
