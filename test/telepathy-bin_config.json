@@ -3,6 +3,7 @@
 	"count": 5,
 	"length": 10,
 	"index": 0,
+	"algorithm": "SHA3",
 	"lax": false,
 	"secret": "test"
 }

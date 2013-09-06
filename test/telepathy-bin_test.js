@@ -70,8 +70,22 @@ exports['telepathy-bin'] = {
 			.start();
 	},
 
-				test.done();
-			}
-		);
+	'test additional algorithms': function(test) {
+		test.expect(Object.keys(Telepathy.algorithms).length);
+
+		new TelepathyTestCLI(test)
+			.exec('-d example.com -n 1 -a MD5', 'F!?m(?SB^%\n')
+			.exec('-d example.com -n 1 -a SHA1', 'D_4#"73AM5\n')
+			.exec('-d example.com -n 1 -a SHA224', 'y)E4_ivgWB\n')
+			.exec('-d example.com -n 1 -a SHA256', 'z<u9N_[c"R\n')
+			.exec('-d example.com -n 1 -a SHA384', '9P05(?7Px`\n')
+			.exec('-d example.com -n 1 -a SHA512', 'V{fvC^YRi(\n')
+			.exec('-d example.com -n 1 -a SHA3', 'iIw+B2uWs,\n')
+			.exec('-d example.com -n 1 -a SHA3_224', 'bi-U(46/-H\n')
+			.exec('-d example.com -n 1 -a SHA3_256', '=!|Ob<J9LP\n')
+			.exec('-d example.com -n 1 -a SHA3_384', 'PweY8x_;C4\n')
+			.exec('-d example.com -n 1 -a SHA3_512', 'iIw+B2uWs,\n')
+			.exec('-d example.com -n 1 -a RIPEMD160', '[w!(k^|0?;\n')
+			.start();
 	}
 };
