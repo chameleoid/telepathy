@@ -18,92 +18,57 @@
     test.ifError(value)
 */
 
-var exec      = require('child_process').exec,
-    telepathy = './bin/telepathy -c test/telepathy-bin_config.json ';
+var Telepathy        = require('../lib/telepathy.js'),
+    TelepathyTestCLI = require('./lib/telepathytestcli.js');
 
 exports['telepathy-bin'] = {
 	'standard domain with default results': function(test) {
 		test.expect(1);
 
-		exec(
-			telepathy + '-d example.com',
-			function(error, stdout, stderr) {
-				if (!error && !stderr)
-					test.equal(stdout, 'iIw+B2uWs,\nu@FJ.K-s{:\n(Eqo-9w.KV\nf#2K@XEowy\n0vU7ub/#&+\n');
-
-				test.done();
-			}
-		);
+		new TelepathyTestCLI(test)
+			.exec('-d example.com', 'iIw+B2uWs,\nu@FJ.K-s{:\n(Eqo-9w.KV\nf#2K@XEowy\n0vU7ub/#&+\n')
+			.start();
 	},
 
 	'test username option': function(test) {
-		test.expect(2);
+		test.expect(1);
 
-		exec(
-			telepathy + '-d example.com -u foo',
-			function(error, stdout, stderr) {
-				if (!error && !stderr) {
-					test.equal(stdout, 'J%HuXXpSpG\nm:B}vq"=g<\n*lbNskrL}O\nsu,rYsOTyD\nLMrhYYpN(%\n');
-
-					// pulled from 'default' results
-					test.notEqual(stdout, 'iIw+B2uWs,\nu@FJ.K-s{:\n(Eqo-9w.KV\nf#2K@XEowy\n0vU7ub/#&+\n');
-				}
-
-				test.done();
-			}
-		);
+		new TelepathyTestCLI(test)
+			.exec('-d example.com -u foo', 'J%HuXXpSpG\nm:B}vq"=g<\n*lbNskrL}O\nsu,rYsOTyD\nLMrhYYpN(%\n')
+			.start();
 	},
 
 	'test starting index': function(test) {
 		test.expect(1);
 
-		exec(
-			telepathy + '-d example.com -i 4',
-			function(error, stdout, stderr) {
-				if (!error && !stderr)
-					test.equal(stdout, '0vU7ub/#&+\n*oNo2h/Gi#\ne$!MCvZ=+M\n_"P%+(DFc7\nazT%$lCeLk\n');
-
-				test.done();
-			}
-		);
+		new TelepathyTestCLI(test)
+			.exec('-d example.com -i 4', '0vU7ub/#&+\n*oNo2h/Gi#\ne$!MCvZ=+M\n_"P%+(DFc7\nazT%$lCeLk\n')
+			.start();
 	},
 
 	'test password length': function(test) {
 		test.expect(1);
 
-		exec(
-			telepathy + '-d example.com -l 4',
-			function(error, stdout, stderr) {
-				if (!error && !stderr)
-					test.equal(stdout, 'uWs,\nw+B2\n{:iI\n.K-s\nu@FJ\n');
-
-				test.done();
-			}
-		);
+		new TelepathyTestCLI(test)
+			.exec('-d example.com -l 4', 'uWs,\nw+B2\n{:iI\n.K-s\nu@FJ\n')
+			.start();
 	},
 
 	'test lax mode': function(test) {
 		test.expect(1);
 
-		exec(
-			telepathy + '-d example.com -x',
-			function(error, stdout, stderr) {
-				if (!error && !stderr)
-					test.equal(stdout, 'dQiyeU81Tb\n9qaYRNSKBw\nzVwWEd9plt\nCagcl4MboD\n2UmwQct5wm\n');
-
-				test.done();
-			}
-		);
+		new TelepathyTestCLI(test)
+			.exec('-d example.com -x', 'dQiyeU81Tb\n9qaYRNSKBw\nzVwWEd9plt\nCagcl4MboD\n2UmwQct5wm\n')
+			.start();
 	},
 
 	'test password count': function(test) {
 		test.expect(1);
 
-		exec(
-			telepathy + '-d example.com -n 10',
-			function(error, stdout, stderr) {
-				if (!error && !stderr)
-					test.equal(stdout, 'iIw+B2uWs,\nu@FJ.K-s{:\n(Eqo-9w.KV\nf#2K@XEowy\n0vU7ub/#&+\n*oNo2h/Gi#\ne$!MCvZ=+M\n_"P%+(DFc7\nazT%$lCeLk\nX3&<|zv"5,\n');
+		new TelepathyTestCLI(test)
+			.exec('-d example.com -n 10', 'iIw+B2uWs,\nu@FJ.K-s{:\n(Eqo-9w.KV\nf#2K@XEowy\n0vU7ub/#&+\n*oNo2h/Gi#\ne$!MCvZ=+M\n_"P%+(DFc7\nazT%$lCeLk\nX3&<|zv"5,\n')
+			.start();
+	},
 
 				test.done();
 			}
