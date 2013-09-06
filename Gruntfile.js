@@ -30,7 +30,7 @@ module.exports = function(grunt) {
 			gruntfile: 'Gruntfile.js',
 			bin: 'bin/telepathy',
 			dist: 'lib/**/*.{js,json}',
-			test: ['test/**/*.json', '<%= nodeunit.test %>'],
+			test: ['test/**/*.json', 'test/**/*.js'],
 
 			options: {
 				curly: false,
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
 		},
 
 		nodeunit: {
-			test: 'test/**/*.js'
+			test: 'test/**/*_test.js'
 		}
 	});
 
