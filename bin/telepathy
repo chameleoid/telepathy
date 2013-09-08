@@ -71,7 +71,7 @@ opts = opts.usage('Telepathically manage passwords.\nUsage: $0\nVersion: ' + jso
 	a: {
 		describe: 'hashing algorithm to use',
 		alias: 'algorithm',
-		default: 'SHA256'
+		default: config.algorithm
 	}
 });
 
