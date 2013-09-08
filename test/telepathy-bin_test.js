@@ -87,5 +87,17 @@ exports['telepathy-bin'] = {
 			.exec('-d example.com -n 1 -a SHA3_512', 'iIw+B2uWs,\n')
 			.exec('-d example.com -n 1 -a RIPEMD160', '[w!(k^|0?;\n')
 			.start();
+	},
+
+	'test config options': function(test) {
+		test.expect(5);
+
+		new TelepathyTestCLI(test)
+			.config('algorithm').exec('-d example.com', 'V{fvC^YRi(\ns"_V8!DBk;\nlUnV_cD&$w\n*A}iC"}RfH\nG9{3;3u00j\n')
+			.config('count').exec('-d example.com', 'z<u9N_[c"R\ng:3WGYj0}~\n4WoBT`c3q4\nVtav?h"$0?\n;L0)EkaAKg\nr\'3b(L8bvh\nrz80RFR667\n[%^gCi$=Lw\n>|-Ll/mW-a\n1wroDAq=^e\n')
+			.config('index').exec('-d example.com', 'r\'3b(L8bvh\nrz80RFR667\n[%^gCi$=Lw\n>|-Ll/mW-a\n1wroDAq=^e\n')
+			.config('lax').exec('-d example.com', 'XqQoIZF58B\nRqUBdjJtX7\nyjpwoHtdc0\nwUcC8TBH8k\nJEJC1hffn2\n')
+			.config('length').exec('-d example.com', '_[c"R\nz<u9N\nYj0}~\ng:3WG\n`c3q4\n')
+			.start();
 	}
 };

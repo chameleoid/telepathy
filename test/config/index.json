@@ -1,0 +1,9 @@
+{
+	"username": "test",
+	"count": 5,
+	"length": 10,
+	"index": 5,
+	"algorithm": "SHA256",
+	"lax": false,
+	"secret": "test"
+}

@@ -3,19 +3,33 @@ var exec = require('child_process').exec;
 /**
  * Telepathy CLI testing wrapper
  * @param test  NodeUnit test interface
+ * @param {string} [config='default']  Config file name as would be passed to {Telepathy#config}
  */
-function TelepathyTestCLI(test) {
+function TelepathyTestCLI(test, config) {
 	this._test = test;
 	this._tests = [];
+	this.config(config || 'default');
 }
+
+/**
+ * Change config file (inline option)
+ * @param {string} config  Name of config file to use (becomes `test/config/{config}.json`)
+ * @returns {TelepathyTestCLI}
+ */
+TelepathyTestCLI.prototype.config = function(config) {
+	this._config = 'test/config/' + config + '.json';
+	return this;
+};
 
 /**
  * Appends a test to the test sequence
  * @param {string} args  String of CLI arguments to pass to telepathy-bin
  * @param {string} expect  Expected result
+ * @returns {TelepathyTestCLI}
  */
 TelepathyTestCLI.prototype.exec = function(args, expect) {
 	this._tests.push({
+		config: this._config,
 		args: args,
 		expect: expect
 	});
@@ -29,7 +43,7 @@ TelepathyTestCLI.prototype.next = function() {
 	    test = this._tests.shift();
 
 	exec(
-		'./bin/telepathy -c test/telepathy-bin_config.json ' + test.args,
+		['./bin/telepathy', '-c ' + test.config, test.args].join(' '),
 		function(error, stdout, stderr) {
 			if (!error && !stderr)
 				that._test.equal(stdout, test.expect);
