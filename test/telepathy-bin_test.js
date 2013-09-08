@@ -26,7 +26,7 @@ exports['telepathy-bin'] = {
 		test.expect(1);
 
 		new TelepathyTestCLI(test)
-			.exec('-d example.com', 'iIw+B2uWs,\nu@FJ.K-s{:\n(Eqo-9w.KV\nf#2K@XEowy\n0vU7ub/#&+\n')
+			.exec('-d example.com', 'z<u9N_[c"R\ng:3WGYj0}~\n4WoBT`c3q4\nVtav?h"$0?\n;L0)EkaAKg\n')
 			.start();
 	},
 
@@ -34,7 +34,7 @@ exports['telepathy-bin'] = {
 		test.expect(1);
 
 		new TelepathyTestCLI(test)
-			.exec('-d example.com -u foo', 'J%HuXXpSpG\nm:B}vq"=g<\n*lbNskrL}O\nsu,rYsOTyD\nLMrhYYpN(%\n')
+			.exec('-d example.com -u foo', '9\'Bn_Dt]Uv\niqHBmyZU>J\nFQ2`KX=,.j\n-3PI+EuG;o\n4IWl/+-I9p\n')
 			.start();
 	},
 
@@ -42,7 +42,7 @@ exports['telepathy-bin'] = {
 		test.expect(1);
 
 		new TelepathyTestCLI(test)
-			.exec('-d example.com -i 4', '0vU7ub/#&+\n*oNo2h/Gi#\ne$!MCvZ=+M\n_"P%+(DFc7\nazT%$lCeLk\n')
+			.exec('-d example.com -i 4', ';L0)EkaAKg\nr\'3b(L8bvh\nrz80RFR667\n[%^gCi$=Lw\n>|-Ll/mW-a\n')
 			.start();
 	},
 
@@ -50,7 +50,7 @@ exports['telepathy-bin'] = {
 		test.expect(1);
 
 		new TelepathyTestCLI(test)
-			.exec('-d example.com -l 4', 'uWs,\nw+B2\n{:iI\n.K-s\nu@FJ\n')
+			.exec('-d example.com -l 4', '[c"R\nu9N_\n}~z<\nGYj0\ng:3W\n')
 			.start();
 	},
 
@@ -58,7 +58,7 @@ exports['telepathy-bin'] = {
 		test.expect(1);
 
 		new TelepathyTestCLI(test)
-			.exec('-d example.com -x', 'dQiyeU81Tb\n9qaYRNSKBw\nzVwWEd9plt\nCagcl4MboD\n2UmwQct5wm\n')
+			.exec('-d example.com -x', 'XqQoIZF58B\nRqUBdjJtX7\nyjpwoHtdc0\nwUcC8TBH8k\nJEJC1hffn2\n')
 			.start();
 	},
 
@@ -66,7 +66,7 @@ exports['telepathy-bin'] = {
 		test.expect(1);
 
 		new TelepathyTestCLI(test)
-			.exec('-d example.com -n 10', 'iIw+B2uWs,\nu@FJ.K-s{:\n(Eqo-9w.KV\nf#2K@XEowy\n0vU7ub/#&+\n*oNo2h/Gi#\ne$!MCvZ=+M\n_"P%+(DFc7\nazT%$lCeLk\nX3&<|zv"5,\n')
+			.exec('-d example.com -n 10', 'z<u9N_[c"R\ng:3WGYj0}~\n4WoBT`c3q4\nVtav?h"$0?\n;L0)EkaAKg\nr\'3b(L8bvh\nrz80RFR667\n[%^gCi$=Lw\n>|-Ll/mW-a\n1wroDAq=^e\n')
 			.start();
 	},
 

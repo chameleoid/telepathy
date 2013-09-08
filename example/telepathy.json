@@ -12,7 +12,7 @@
 	"index": 0,
 
 	"//": "Hashing algorithm (MD5, SHA1, SHA224, SHA256, SHA384, SHA512, SHA3, SHA3_224, SHA3_256, SHA3_384, SHA3_512, RIPEMD160)",
-	"algorithm": "SHA3",
+	"algorithm": "SHA256",
 
 	"//": "Don't generate passwords that could break insecure login forms?",
 	"lax": false,

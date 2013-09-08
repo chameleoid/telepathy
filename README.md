@@ -13,7 +13,7 @@ Install with: `npm install -g telepathy`
 > telepathy
 Telepathically manage passwords.
 Usage: telepathy
-Version: 0.3.0
+Version: 0.3.1
 
 Options:
   -c, --config     config file                           [default: "/path/to/home/.telepathy.json"]
@@ -22,7 +22,7 @@ Options:
   -i, --index      starting password index               [default: 0]
   -s, --safe       [deprecated] see lax                  [default: false]
   -x, --lax        lax mode (use base 62 instead of 94)  [default: false]
-  -a, --algorithm  hashing algorithm to use              [default: "SHA3"]
+  -a, --algorithm  hashing algorithm to use              [default: "SHA256"]
   -d, --domain                                           [required]
   -u, --username                                         [default: "you"]
 

@@ -23,17 +23,17 @@ var Telepathy = require('../lib/telepathy.js');
 exports['password'] = {
 	'no args': function(test) {
 		test.expect(1);
-		test.equal(new Telepathy().password(), 'aIN8v2T3E6');
+		test.equal(new Telepathy().password(), 'jWEepHLxI5');
 		test.done();
 	},
 	'base16 alphabet': function(test) {
 		test.expect(1);
-		test.equal(new Telepathy().password({ alphabet: Telepathy.alphabet.base16 }), '3d3670680e');
+		test.equal(new Telepathy().password({ alphabet: Telepathy.alphabet.base16 }), '1b7852b855');
 		test.done();
 	},
 	'length 5': function(test) {
 		test.expect(1);
-		test.equal(new Telepathy().password({ length: 5 }), '2T3E6');
+		test.equal(new Telepathy().password({ length: 5 }), 'HLxI5');
 		test.done();
 	}
 };
