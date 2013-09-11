@@ -100,5 +100,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-karma');
 
 	grunt.registerTask('default', ['test']);
-	grunt.registerTask('test', ['jshint', 'mochaclia', 'karma:phantom']);
+	grunt.registerTask('test', ['jshint', 'mochacli', 'karma:phantom']);
 };
