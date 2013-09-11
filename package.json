@@ -1,7 +1,7 @@
 {
 	"name": "telepathy",
 	"description": "A telepathic password manager",
-	"version": "0.3.1-alpha",
+	"version": "0.3.2-alpha",
 	"homepage": "https://github.com/rummik/telepathy",
 	"author": {
 		"name": "rummik",
