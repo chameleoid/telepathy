@@ -1,13 +1,12 @@
-var exec = require('child_process').exec;
+var exec   = require('child_process').exec,
+    should = require('should');
 
 /**
  * Telepathy CLI testing wrapper
  * @param test  NodeUnit test interface
  * @param {string} [config='default']  Config file name as would be passed to {Telepathy#config}
  */
-function TelepathyTestCLI(test, config) {
-	this._test = test;
-	this._tests = [];
+function TelepathyTestCLI(config) {
 	this.config(config || 'default');
 }
 
@@ -28,37 +27,27 @@ TelepathyTestCLI.prototype.config = function(config) {
  * @returns {TelepathyTestCLI}
  */
 TelepathyTestCLI.prototype.exec = function(args, expect) {
-	this._tests.push({
-		config: this._config,
-		args: args,
-		expect: expect
+	var that = this,
+	    config = this._config;
+
+	it('should return ' + expect, function(done) {
+		exec(
+			['./bin/telepathy', '-c ' + config, args].join(' '),
+			function(error, stdout, stderr) {
+				if (!error && !stderr)
+					stdout.should.equal(expect);
+
+				done();
+			}
+		);
 	});
+
 
 	return this;
 };
 
 /** Fires off the next test in sequence */
 TelepathyTestCLI.prototype.next = function() {
-	var that = this,
-	    test = this._tests.shift();
-
-	exec(
-		['./bin/telepathy', '-c ' + test.config, test.args].join(' '),
-		function(error, stdout, stderr) {
-			if (!error && !stderr)
-				that._test.equal(stdout, test.expect);
-
-			if (that._tests.length)
-				that.next();
-			else
-				that._test.done();
-		}
-	);
-};
-
-/** Start test */
-TelepathyTestCLI.prototype.start = function() {
-	this.next();
 };
 
 module.exports = TelepathyTestCLI;

@@ -12,17 +12,17 @@ module.exports = function(grunt) {
 
 			dist: {
 				files: '<%= jshint.dist %>',
-				tasks: ['jshint:dist', 'nodeunit:test']
+				tasks: ['jshint:dist', 'mochacli:test', 'karma:unit:run']
 			},
 
 			test: {
 				files: '<%= jshint.test %>',
-				tasks: ['jshint:test', 'nodeunit:test']
+				tasks: ['jshint:test', 'mochacli:test', 'karma:unit:run']
 			},
 
 			bin: {
 				files: '<%= jshint.bin %>',
-				tasks: ['jshint:bin', 'nodeunit:test']
+				tasks: ['jshint:bin', 'mochacli:test']
 			}
 		},
 
@@ -49,19 +49,56 @@ module.exports = function(grunt) {
 				node: true,
 
 				globals: {
+					describe: false,
+					it: false,
+					before: false,
+					after: false,
+					beforeEach: false,
+					afterEach: false
 				}
 			}
 		},
 
-		nodeunit: {
+		mochacli: {
 			test: 'test/**/*_test.js'
+		},
+
+		karma: {
+			unit: {
+				hostname: '0.0.0.0',
+				browsers: ['Firefox', 'Chrome', 'PhantomJS']
+			},
+
+			phantom: {
+				singleRun: true,
+				browsers: ['PhantomJS']
+			},
+
+			options: {
+				reporters: 'dots',
+				frameworks: ['mocha', 'browserify'],
+
+				files: [
+					'test/**/*_test.js'
+				],
+
+				browserify: {
+					watch: true
+				},
+
+				preprocessors: {
+					'test/**/*.js': ['browserify']
+				}
+			}
 		}
+
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-nodeunit');
+	grunt.loadNpmTasks('grunt-mocha-cli');
+	grunt.loadNpmTasks('grunt-karma');
 
 	grunt.registerTask('default', ['test']);
-	grunt.registerTask('test', ['jshint', 'nodeunit']);
+	grunt.registerTask('test', ['jshint', 'mochaclia', 'karma:phantom']);
 };

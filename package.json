@@ -37,8 +37,12 @@
 	"devDependencies": {
 		"grunt": "~0.4.1",
 		"grunt-contrib-jshint": "~0.6.3",
-		"grunt-contrib-nodeunit": "~0.2.0",
-		"grunt-contrib-watch": "~0.5.2"
+		"grunt-contrib-watch": "~0.5.2",
+		"grunt-karma": "~0.6.2",
+		"karma-mocha": "~0.1.0",
+		"karma-browserify": "~0.0.4",
+		"grunt-mocha-cli": "~1.1.0",
+		"should": "~1.2.2"
 	},
 	"keywords": [
 		"telepathic",

@@ -1,39 +1,18 @@
-/*
-  ======== A Handy Little Nodeunit Reference ========
-  https://github.com/caolan/nodeunit
+var Telepathy = require('../lib/telepathy.js'),
+    should    = require('should');
 
-  Test methods:
-    test.expect(numAssertions)
-    test.done()
-  Test assertions:
-    test.ok(value, [message])
-    test.equal(actual, expected, [message])
-    test.notEqual(actual, expected, [message])
-    test.deepEqual(actual, expected, [message])
-    test.notDeepEqual(actual, expected, [message])
-    test.strictEqual(actual, expected, [message])
-    test.notStrictEqual(actual, expected, [message])
-    test.throws(block, [error], [message])
-    test.doesNotThrow(block, [error], [message])
-    test.ifError(value)
-*/
+describe('Telepathy', function() {
+	describe('#password', function() {
+		it('should work with no args', function() {
+			new Telepathy().password().should.equal('jWEepHLxI5');
+		});
 
-var Telepathy = require('../lib/telepathy.js');
+		it('accepts an alphabet option', function() {
+			new Telepathy().password({ alphabet: Telepathy.alphabet.base16 }).should.equal('1b7852b855');
+		});
 
-exports['password'] = {
-	'no args': function(test) {
-		test.expect(1);
-		test.equal(new Telepathy().password(), 'jWEepHLxI5');
-		test.done();
-	},
-	'base16 alphabet': function(test) {
-		test.expect(1);
-		test.equal(new Telepathy().password({ alphabet: Telepathy.alphabet.base16 }), '1b7852b855');
-		test.done();
-	},
-	'length 5': function(test) {
-		test.expect(1);
-		test.equal(new Telepathy().password({ length: 5 }), 'HLxI5');
-		test.done();
-	}
-};
+		it('accepts a length option', function() {
+			new Telepathy().password({ length: 5 }).should.equal('HLxI5');
+		});
+	});
+});
