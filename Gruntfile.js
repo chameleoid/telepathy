@@ -12,12 +12,12 @@ module.exports = function(grunt) {
 
 			dist: {
 				files: '<%= jshint.dist %>',
-				tasks: ['jshint:dist', 'mochacli:test', 'karma:unit:run']
+				tasks: ['jshint:dist', 'mochacli:test', 'karma:test:run']
 			},
 
 			test: {
 				files: '<%= jshint.test %>',
-				tasks: ['jshint:test', 'mochacli:test', 'karma:unit:run']
+				tasks: ['jshint:test', 'mochacli:test', 'karma:test:run']
 			},
 
 			bin: {
@@ -39,10 +39,12 @@ module.exports = function(grunt) {
 				latedef: true,
 				newcap: true,
 				noarg: true,
+				quotmark: true,
 				sub: true,
 				undef: true,
 				boss: true,
 				eqnull: true,
+				regexdash: true,
 				smarttabs: true,
 				strict: false,
 				browser: true,
@@ -64,7 +66,7 @@ module.exports = function(grunt) {
 		},
 
 		karma: {
-			unit: {
+			test: {
 				hostname: '0.0.0.0',
 				browsers: ['Firefox', 'Chrome', 'PhantomJS']
 			},
