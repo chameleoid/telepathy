@@ -3,8 +3,10 @@ A telepathic password manager.
 
 Telepathy creates site-specific, unique passwords using a shared secret.
 
+
 ## How's it work?
 At the core, it uses SHA3(secret + user + domain) -> base-convert(62/94)
+
 
 ## Getting Started
 Install with: `npm install -g telepathy`
@@ -37,23 +39,33 @@ f#2K@XEowy
 0vU7ub/#&+
 ```
 
+
 ## Documentation
 _(Coming soon)_
+
 
 ## Examples
 ```javascript
 var Telepathy = require('telepathy');
 
 console.log(new Telepathy('testing').password({
-	user: 'rummik',
-	domain: 'rummik.com',
-	length: 300,
-	alphabet: Telepathy.alphabet.base94
+    user: 'rummik',
+    domain: 'rummik.com',
+    length: 300,
+    alphabet: Telepathy.alphabet.base94,
 }));
 ```
 
+
 ## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](https://github.com/gruntjs/grunt).
+Please see the [Chameleoid Styleguide][style] before contributing.
+
+Take care to maintain the existing coding style. Add unit tests for any new or
+changed functionality. Lint and test your code using [Grunt][grunt].
+
+[style]: https://github.com/chameleoid/style
+[grunt]: https://grunt
+
 
 ## License
 Copyright (c) 2012-2013 rummik
