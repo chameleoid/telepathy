@@ -1,9 +1,8 @@
 #!/usr/bin/env node
-var i, password, telepathy, config, argv,
-    Telepathy = require('../lib/telepathy'),
-    fs        = require('fs'),
-    opts      = require('optimist'),
-    json      = require('../package.json');
+var Telepathy = require('../lib/telepathy');
+var fs = require('fs');
+var opts = require('optimist');
+var json = require('../package.json');
 
 opts = opts.options('c', {
 	describe: 'config file',
@@ -18,7 +17,7 @@ if (!fs.existsSync(opts.argv.config)) {
 	process.exit();
 }
 
-config = JSON.parse(fs.readFileSync(opts.argv.config));
+var config = JSON.parse(fs.readFileSync(opts.argv.config));
 
 if (!config.secret) {
 	console.error('Option "secret" missing or empty in', opts.argv.config);
@@ -35,47 +34,47 @@ if (typeof config.safe != 'undefined') {
 opts = opts.usage('Telepathically manage passwords.\nUsage: $0\nVersion: ' + json.version).options({
 	d: {
 		alias: 'domain',
-		demand: true
+		demand: true,
 	},
 	u: {
 		default: config.username || process.env.USER,
-		alias: 'username'
+		alias: 'username',
 	},
 	l: {
 		describe: 'password length',
 		alias: 'length',
-		default: config.length || 10
+		default: config.length || 10,
 	},
 	n: {
 		describe: 'number of passwords to display',
 		alias: 'count',
-		default: config.count || 5
+		default: config.count || 5,
 	},
 	i: {
 		describe: 'starting password index',
 		alias: 'index',
-		default: config.index || 0
+		default: config.index || 0,
 	},
 	s: {
 		describe: '[deprecated] see lax',
 		boolean: true,
 		alias: 'safe',
-		default: false
+		default: false,
 	},
 	x: {
 		describe: 'lax mode (use base 62 instead of 94)',
 		boolean: true,
 		alias: 'lax',
-		default: (typeof config.lax != 'undefined' ? config.lax : config.safe) || false
+		default: (typeof config.lax != 'undefined' ? config.lax : config.safe) || false,
 	},
 	a: {
 		describe: 'hashing algorithm to use',
 		alias: 'algorithm',
-		default: config.algorithm
-	}
+		default: config.algorithm,
+	},
 });
 
-argv = opts.argv;
+var argv = opts.argv;
 
 if (argv.safe) {
 	console.error('Deprecated option "-s" or "--safe" used, please use "-x" or "--lax" instead');
@@ -85,14 +84,14 @@ if (!(argv.algorithm.toUpperCase() in Telepathy.algorithms)) {
 	console.error('Invalid algorithm supplied');
 }
 
-telepathy = new Telepathy({
+var telepathy = new Telepathy({
 	secret: config.secret,
 	length: argv.length,
 	user: argv.username,
 	domain: argv.domain,
 	alphabet: (argv.lax || argv.safe) ? Telepathy.alphabet.base62 : Telepathy.alphabet.base94,
-	algorithm: argv.algorithm
+	algorithm: argv.algorithm,
 });
 
-for (i=argv.index; i<argv.index + argv.count; i++)
+for (var i=argv.index; i<argv.index + argv.count; i++)
 	console.log(telepathy.password(i));
