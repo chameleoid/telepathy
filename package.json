@@ -2,7 +2,7 @@
 	"name": "telepathy",
 	"description": "A telepathic password manager",
 	"version": "0.3.2-alpha",
-	"homepage": "https://github.com/rummik/telepathy",
+	"homepage": "https://github.com/chameleoid/telepathy",
 	"author": {
 		"name": "rummik",
 		"email": "r@9k1.us",
@@ -10,15 +10,15 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/rummik/telepathy.git"
+		"url": "git://github.com/chameleoid/telepathy.git"
 	},
 	"bugs": {
-		"url": "https://github.com/rummik/telepathy/issues"
+		"url": "https://github.com/chameleoid/telepathy/issues"
 	},
 	"licenses": [
 		{
 			"type": "MPL",
-			"url": "https://github.com/rummik/telepathy/blob/master/LICENSE-MPL"
+			"url": "https://github.com/chameleoid/telepathy/blob/master/LICENSE-MPL"
 		}
 	],
 	"main": "lib/telepathy",
