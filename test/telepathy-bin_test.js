@@ -1,9 +1,10 @@
-var Telepathy        = require('../lib/telepathy.js'),
-    TelepathyTestCLI = require('./lib/telepathytestcli.js'),
-    telepathyCLI     = new TelepathyTestCLI(),
-    should           = require('should');
+var TelepathyTestCLI = require('./lib/telepathytestcli.js');
+var telepathyCLI = new TelepathyTestCLI();
+require('should');
 
 describe('telepathy-bin', function() {
+	'use strict';
+
 	if (process.title == 'browser')
 		return it('should do nothing', function() {});
 

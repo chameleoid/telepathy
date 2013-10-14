@@ -1,5 +1,5 @@
-var exec   = require('child_process').exec,
-    should = require('should');
+var exec = require('child_process').exec;
+require('should');
 
 /**
  * Telepathy CLI testing wrapper
@@ -7,6 +7,7 @@ var exec   = require('child_process').exec,
  * @param {string} [config='default']  Config file name as would be passed to {Telepathy#config}
  */
 function TelepathyTestCLI(config) {
+	'use strict';
 	this.config(config || 'default');
 }
 
@@ -16,6 +17,7 @@ function TelepathyTestCLI(config) {
  * @returns {TelepathyTestCLI}
  */
 TelepathyTestCLI.prototype.config = function(config) {
+	'use strict';
 	this._config = 'test/config/' + config + '.json';
 	return this;
 };
@@ -27,8 +29,8 @@ TelepathyTestCLI.prototype.config = function(config) {
  * @returns {TelepathyTestCLI}
  */
 TelepathyTestCLI.prototype.exec = function(args, expect) {
-	var that = this,
-	    config = this._config;
+	'use strict';
+	var config = this._config;
 
 	it('should return ' + expect, function(done) {
 		exec(
@@ -42,12 +44,7 @@ TelepathyTestCLI.prototype.exec = function(args, expect) {
 		);
 	});
 
-
 	return this;
-};
-
-/** Fires off the next test in sequence */
-TelepathyTestCLI.prototype.next = function() {
 };
 
 module.exports = TelepathyTestCLI;
