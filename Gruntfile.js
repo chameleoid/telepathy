@@ -7,23 +7,23 @@ module.exports = function(grunt) {
 		watch: {
 			gruntfile: {
 				files: '<%= jshint.gruntfile %>',
-				tasks: 'jshint:gruntfile'
+				tasks: 'jshint:gruntfile',
 			},
 
 			dist: {
 				files: '<%= jshint.dist %>',
-				tasks: ['jshint:dist', 'mochacli:test', 'karma:test:run']
+				tasks: ['jshint:dist', 'mochacli:test', 'karma:test:run'],
 			},
 
 			test: {
 				files: '<%= jshint.test %>',
-				tasks: ['jshint:test', 'mochacli:test', 'karma:test:run']
+				tasks: ['jshint:test', 'mochacli:test', 'karma:test:run'],
 			},
 
 			bin: {
 				files: '<%= jshint.bin %>',
-				tasks: ['jshint:bin', 'mochacli:test']
-			}
+				tasks: ['jshint:bin', 'mochacli:test'],
+			},
 		},
 
 		jshint: {
@@ -56,24 +56,24 @@ module.exports = function(grunt) {
 					before: false,
 					after: false,
 					beforeEach: false,
-					afterEach: false
-				}
-			}
+					afterEach: false,
+				},
+			},
 		},
 
 		mochacli: {
-			test: 'test/**/*_test.js'
+			test: 'test/**/*_test.js',
 		},
 
 		karma: {
 			test: {
 				hostname: '0.0.0.0',
-				browsers: ['Firefox', 'Chrome', 'PhantomJS']
+				browsers: ['Firefox', 'Chrome', 'PhantomJS'],
 			},
 
 			phantom: {
 				singleRun: true,
-				browsers: ['PhantomJS']
+				browsers: ['PhantomJS'],
 			},
 
 			options: {
@@ -81,19 +81,18 @@ module.exports = function(grunt) {
 				frameworks: ['mocha', 'browserify'],
 
 				files: [
-					'test/**/*_test.js'
+					'test/**/*_test.js',
 				],
 
 				browserify: {
-					watch: true
+					watch: true,
 				},
 
 				preprocessors: {
-					'test/**/*.js': ['browserify']
-				}
-			}
-		}
-
+					'test/**/*.js': ['browserify'],
+				},
+			},
+		},
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
