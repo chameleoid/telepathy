@@ -1,11 +1,19 @@
-# Telepathy  [![Testing](https://secure.travis-ci.org/rummik/telepathy.png)](http://travis-ci.org/rummik/telepathy) [![Dependency Status](https://gemnasium.com/rummik/telepathy.png)](https://gemnasium.com/rummik/telepathy) [![](http://badgr.co/gittip/rummik.png)](https://www.gittip.com/rummik/)
+Telepathy [![Builds][]][travis] [![Deps][]][gemnasium] [![Donations][]][gittip]
+=========
 A telepathic password manager.
 
 Telepathy creates site-specific, unique passwords using a shared secret.
 
+[Builds]: https://travis-ci.org/chameleoid/telepathy.png "Build Status"
+[travis]: https://travis-ci.org/chameleoid/telepathy
+[Deps]: https://gemnasium.com/chameleoid/telepathy.png "Dependency Status"
+[gemnasium]: https://gemnasium.com/chameleoid/telepathy
+[Donations]: http://badgr.co/gittip/rummik.png
+[gittip]: https://www.gittip.com/rummik/
+
 
 ## How's it work?
-At the core, it uses SHA3(secret + user + domain) -> base-convert(62/94)
+At the core, it uses HASH(secret + user + domain) -> base-convert(62/94)
 
 
 ## Getting Started
@@ -58,13 +66,13 @@ console.log(new Telepathy('testing').password({
 
 
 ## Contributing
-Please see the [Chameleoid Styleguide][style] before contributing.
+Please see the [Chameleoid Styleguide][] before contributing.
 
-Take care to maintain the existing coding style. Add unit tests for any new or
-changed functionality. Lint and test your code using [Grunt][grunt].
+Take care to maintain the existing coding style.  Add unit tests for any new or
+changed functionality.  Lint and test your code using [Grunt][].
 
-[style]: https://github.com/chameleoid/style
-[grunt]: https://grunt
+[Chameleoid Styleguide]: https://github.com/chameleoid/style
+[Grunt]: http://gruntjs.com/
 
 
 ## License
