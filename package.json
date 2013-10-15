@@ -18,7 +18,7 @@
 	"licenses": [
 		{
 			"type": "MPL",
-			"url": "https://github.com/chameleoid/telepathy/blob/master/LICENSE-MPL"
+			"url": "https://github.com/chameleoid/telepathy/blob/master/LICENSE.md"
 		}
 	],
 	"main": "lib/telepathy",
