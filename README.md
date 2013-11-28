@@ -8,7 +8,7 @@ Telepathy creates site-specific, unique passwords using a shared secret.
 [travis]: https://travis-ci.org/chameleoid/telepathy
 [Deps]: https://gemnasium.com/chameleoid/telepathy.png "Dependency Status"
 [gemnasium]: https://gemnasium.com/chameleoid/telepathy
-[Donations]: http://img.sheilds.io/gittip/rummik.png
+[Donations]: http://img.shields.io/gittip/rummik.png
 [gittip]: https://www.gittip.com/rummik/
 
 
