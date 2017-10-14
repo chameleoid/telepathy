@@ -4,7 +4,7 @@ const jshint = require('gulp-jshint');
 
 let source = {
   js: 'lib/*.js',
-  test: 'test/*.js',
+  test: 'test/**.{js,json}',
 };
 
 gulp.task('test', [ 'jshint', 'mocha' ]);
