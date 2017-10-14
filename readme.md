@@ -54,10 +54,10 @@ _(Coming soon)_
 var Telepathy = require('telepathy');
 
 console.log(new Telepathy('testing').password({
-    user: 'rummik',
-    domain: 'rummik.com',
-    length: 300,
-    alphabet: Telepathy.alphabet.base94,
+  user: 'rummik',
+  domain: 'rummik.com',
+  length: 300,
+  alphabet: Telepathy.alphabet.base94,
 }));
 ```
 
