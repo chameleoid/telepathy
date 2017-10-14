@@ -32,7 +32,7 @@ TelepathyTestCLI.prototype.exec = function(args, expect) {
 	'use strict';
 	var config = this._config;
 
-	it('should return ' + expect, function(done) {
+	it(`handles "${args}" with config "${config.split('/').pop()}"`, function(done) {
 		exec(
 			['./bin/telepathy', '-c ' + config, args].join(' '),
 			function(error, stdout, stderr) {
