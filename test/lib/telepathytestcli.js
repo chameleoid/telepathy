@@ -7,8 +7,8 @@ require('should');
  * @param {string} [config='default']  Config file name as would be passed to {Telepathy#config}
  */
 function TelepathyTestCLI(config) {
-	'use strict';
-	this.config(config || 'default');
+  'use strict';
+  this.config(config || 'default');
 }
 
 /**
@@ -17,9 +17,9 @@ function TelepathyTestCLI(config) {
  * @returns {TelepathyTestCLI}
  */
 TelepathyTestCLI.prototype.config = function(config) {
-	'use strict';
-	this._config = 'test/config/' + config + '.json';
-	return this;
+  'use strict';
+  this._config = 'test/config/' + config + '.json';
+  return this;
 };
 
 /**
@@ -29,22 +29,22 @@ TelepathyTestCLI.prototype.config = function(config) {
  * @returns {TelepathyTestCLI}
  */
 TelepathyTestCLI.prototype.exec = function(args, expect) {
-	'use strict';
-	var config = this._config;
+  'use strict';
+  var config = this._config;
 
-	it(`handles "${args}" with config "${config.split('/').pop()}"`, function(done) {
-		exec(
-			['./bin/telepathy', '-c ' + config, args].join(' '),
-			function(error, stdout, stderr) {
-				if (!error && !stderr)
-					stdout.should.equal(expect);
+  it(`handles "${args}" with config "${config.split('/').pop()}"`, function(done) {
+    exec(
+      ['./bin/telepathy', '-c ' + config, args].join(' '),
+      function(error, stdout, stderr) {
+        if (!error && !stderr)
+          stdout.should.equal(expect);
 
-				done();
-			}
-		);
-	});
+        done();
+      }
+    );
+  });
 
-	return this;
+  return this;
 };
 
 module.exports = TelepathyTestCLI;

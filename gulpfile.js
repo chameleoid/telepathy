@@ -1,25 +1,26 @@
 const gulp = require('gulp');
 const mocha = require('gulp-mocha');
-const jshint = require('gulp-jshint');
+const eslint = require('gulp-eslint');
 
 let source = {
   js: 'lib/*.js',
   test: 'test/**.{js,json}',
 };
 
-gulp.task('test', [ 'jshint', 'mocha' ]);
+gulp.task('test', [ 'eslint', 'mocha' ]);
 
 gulp.task('mocha', () =>
   gulp.src(source.test, { read: false })
     .pipe(mocha({ reporter: 'spec' }))
 );
 
-gulp.task('jshint', () =>
+gulp.task('eslint', () =>
   gulp.src([ source.js, source.test ])
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'))
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError())
 );
 
 gulp.task('watch', () => {
-  gulp.watch(source.js, [ 'jshint' ]);
+  gulp.watch(source.js, [ 'eslint' ]);
 });
