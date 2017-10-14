@@ -19,3 +19,7 @@ gulp.task('jshint', () =>
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
 );
+
+gulp.task('watch', () => {
+  gulp.watch(source.js, [ 'jshint' ]);
+});
