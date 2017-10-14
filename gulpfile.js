@@ -7,6 +7,8 @@ let source = {
   test: 'test/**.{js,json}',
 };
 
+gulp.task('default', [ 'test' ]);
+
 gulp.task('test', [ 'eslint', 'mocha' ]);
 
 gulp.task('mocha', () =>
