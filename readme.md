@@ -1,15 +1,12 @@
-Telepathy [![Builds][]][travis] [![Deps][]][gemnasium] [![Donations][]][gittip]
+Telepathy [![Builds][]][travis] [![Deps][]][gemnasium]
 =========
-A telepathic password manager.
-
-Telepathy creates site-specific, unique passwords using a shared secret.
+A sync-less "telepathic" password manager that generates repeatable
+site-specific passwords across any of your devices.
 
 [Builds]: http://img.shields.io/travis-ci/chameleoid/telepathy.png "Build Status"
 [travis]: https://travis-ci.org/chameleoid/telepathy
 [Deps]: https://gemnasium.com/chameleoid/telepathy.png "Dependency Status"
 [gemnasium]: https://gemnasium.com/chameleoid/telepathy
-[Donations]: http://img.shields.io/gittip/rummik.png
-[gittip]: https://www.gittip.com/rummik/
 
 
 ## How's it work?
@@ -57,10 +54,10 @@ _(Coming soon)_
 var Telepathy = require('telepathy');
 
 console.log(new Telepathy('testing').password({
-    user: 'rummik',
-    domain: 'rummik.com',
-    length: 300,
-    alphabet: Telepathy.alphabet.base94,
+  user: 'rummik',
+  domain: 'rummik.com',
+  length: 300,
+  alphabet: Telepathy.alphabet.base94,
 }));
 ```
 
@@ -69,12 +66,12 @@ console.log(new Telepathy('testing').password({
 Please see the [Chameleoid Styleguide][] before contributing.
 
 Take care to maintain the existing coding style.  Add unit tests for any new or
-changed functionality.  Lint and test your code using [Grunt][].
+changed functionality.  Lint and test your code using [Gulp][].
 
 [Chameleoid Styleguide]: https://github.com/chameleoid/style
-[Grunt]: http://gruntjs.com/
+[Gulp]: http://gulpjs.com/
 
 
 ## License
-Copyright (c) 2012-2013 rummik
-Licensed under the MPL license.
+Copyright (c) 2012-2017 Chameleoid and Kimberly Zick (rummik)
+Licensed under the MPL.
