@@ -1,7 +1,7 @@
 {
   "name": "telepathy",
   "description": "A telepathic password manager",
-  "version": "0.4.0-alpha",
+  "version": "0.4.1-alpha",
   "homepage": "https://github.com/chameleoid/telepathy",
   "repository": {
     "type": "git",
