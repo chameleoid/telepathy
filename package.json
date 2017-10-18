@@ -26,8 +26,9 @@
   },
   "dependencies": {
     "bigdecimal": "*",
-    "optimist": "*",
-    "crypto-js": "*"
+    "clipboardy": "^1.1.4",
+    "crypto-js": "*",
+    "optimist": "*"
   },
   "devDependencies": {
     "eslint-config-airbnb-base": "^12.0.2",
