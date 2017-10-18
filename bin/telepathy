@@ -50,7 +50,7 @@ opts = opts.usage('Telepathically manage passwords.\nUsage: $0\nVersion: ' + jso
 	n: {
 		describe: 'number of passwords to display',
 		alias: 'count',
-		default: config.count || 1,
+		default: config.count || 5,
 	},
 	i: {
 		describe: 'starting password index',
@@ -74,11 +74,11 @@ opts = opts.usage('Telepathically manage passwords.\nUsage: $0\nVersion: ' + jso
 		alias: 'algorithm',
 		default: config.algorithm,
 	},
-  c: {
+  y: {
     describe: 'copy to clipboard instead of outputting',
     boolean: true,
     alias: 'clipboard',
-    default: config.clipboard || true,
+    default: config.clipboard || false,
   },
 });
 
@@ -108,8 +108,8 @@ for (var i=argv.index; i<argv.index + argv.count; i++) {
 
 out = out.join('\n');
 
-if (!argv.clipboard) {
-  console.log(out);
-} else {
+if (argv.clipboard) {
   clipboardy.write(out);
+} else {
+  console.log(out);
 }
