@@ -1,6 +1,8 @@
+const cache = require('gulp-cached');
+const eslint = require('gulp-eslint');
 const gulp = require('gulp');
 const mocha = require('gulp-mocha');
-const eslint = require('gulp-eslint');
+const remember = require('gulp-remember');
 
 let source = {
   js: 'lib/*.js',
@@ -18,7 +20,9 @@ gulp.task('mocha', () =>
 
 gulp.task('eslint', () =>
   gulp.src([ source.js, source.test ])
+    .pipe(cache('lint'))
     .pipe(eslint())
+    .pipe(remember('lint'))
     .pipe(eslint.format())
     .pipe(eslint.failAfterError())
 );
