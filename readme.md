@@ -1,4 +1,7 @@
-Telepathy [![Builds][]][travis] [![Deps][]][gemnasium]
+[![Builds][]][travis]
+[![Deps][]][gemnasium]
+
+Telepathy
 =========
 A sync-less "telepathic" password manager that generates repeatable
 site-specific passwords across any of your devices.
