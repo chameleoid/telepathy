@@ -15,9 +15,16 @@ gulp.task('default', [ 'test' ]);
 
 gulp.task('test', [ 'eslint', 'mocha' ]);
 
-gulp.task('mocha', () =>
+gulp.task('istanbul', () =>
+  gulp.src(source.js)
+    .pipe(plug.istanbul())
+    .pipe(plug.istanbul.hookRequire())
+);
+
+gulp.task('mocha', [ 'istanbul' ], () =>
   gulp.src(source.test, { read: false })
     .pipe(plug.mocha({ reporter: 'spec' }))
+    .pipe(plug.istanbul.writeReports())
 );
 
 gulp.task('eslint', () =>
