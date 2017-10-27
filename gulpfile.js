@@ -15,6 +15,11 @@ gulp.task('default', [ 'test' ]);
 
 gulp.task('test', [ 'eslint', 'mocha' ]);
 
+gulp.task('coveralls', () =>
+  gulp.src('./coverage/lcov.info')
+    .pipe(plug.coveralls())
+);
+
 gulp.task('istanbul', () =>
   gulp.src(source.js)
     .pipe(plug.istanbul())
