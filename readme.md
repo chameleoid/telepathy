@@ -1,5 +1,8 @@
+![NPM][]
+![Downloads][]
 [![Builds][]][travis]
 [![Deps][]][gemnasium]
+[![Coverage][]][coveralls]
 
 Telepathy
 =========
@@ -10,6 +13,10 @@ site-specific passwords across any of your devices.
 [travis]: https://travis-ci.org/chameleoid/telepathy
 [Deps]: https://img.shields.io/gemnasium/chameleoid/telepathy.svg "Dependency Status"
 [gemnasium]: https://gemnasium.com/chameleoid/telepathy
+[Coverage]: https://coveralls.io/repos/github/chameleoid/telepathy/badge.svg?branch=master
+[coveralls]: https://coveralls.io/github/chameleoid/telepathy?branch=master
+[Downloads]: https://img.shields.io/npm/dt/telepathy.svg
+[NPM]: https://img.shields.io/npm/v/telepathy.svg
 
 
 ## How's it work?
