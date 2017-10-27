@@ -19,7 +19,7 @@ site-specific passwords across any of your devices.
 [NPM]: https://img.shields.io/npm/v/telepathy.svg
 
 
-## How's it work?
+## How does it work?
 At the core, it uses HASH(secret + user + domain) -> base-convert(62/94)
 
 
@@ -56,10 +56,6 @@ u@FJ.K-s{:
 f#2K@XEowy
 0vU7ub/#&+
 ```
-
-
-## Documentation
-_(Coming soon)_
 
 
 ## Examples
