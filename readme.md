@@ -3,9 +3,9 @@ Telepathy [![Builds][]][travis] [![Deps][]][gemnasium]
 A sync-less "telepathic" password manager that generates repeatable
 site-specific passwords across any of your devices.
 
-[Builds]: http://img.shields.io/travis-ci/chameleoid/telepathy.png "Build Status"
+[Builds]: http://img.shields.io/travis-ci/chameleoid/telepathy.svg "Build Status"
 [travis]: https://travis-ci.org/chameleoid/telepathy
-[Deps]: https://gemnasium.com/chameleoid/telepathy.png "Dependency Status"
+[Deps]: https://img.shields.io/gemnasium/chameleoid/telepathy.svg "Dependency Status"
 [gemnasium]: https://gemnasium.com/chameleoid/telepathy
 
 
