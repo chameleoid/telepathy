@@ -7,10 +7,13 @@ lib-cov
 *.pid
 *.gz
 
+.coveralls.yml
+
 pids
 logs
 results
 docs
+coverage
 
 node_modules
 npm-debug.log
