@@ -30,18 +30,21 @@ Install with: `npm install -g telepathy`
 > telepathy
 Telepathically manage passwords.
 Usage: telepathy
-Version: 0.3.1
+Version: 0.4.2
 
 Options:
-  -c, --config     config file                           [default: "/path/to/home/.telepathy.json"]
-  -l, --length     password length                       [default: 10]
-  -n, --count      number of passwords to display        [default: 5]
-  -i, --index      starting password index               [default: 0]
-  -s, --safe       [deprecated] see lax                  [default: false]
-  -x, --lax        lax mode (use base 62 instead of 94)  [default: false]
-  -a, --algorithm  hashing algorithm to use              [default: "SHA256"]
-  -d, --domain                                           [required]
-  -u, --username                                         [default: "you"]
+  -c, --config     config file                              [default: "/path/to/home/.telepathy.json"]
+  -l, --length     password length                          [default: 10]
+  -n, --count      number of passwords to display           [default: 1]
+  -i, --index      starting password index                  [default: 0]
+  -s, --safe       [deprecated] see lax                     [default: false]
+  -x, --lax        lax mode (use base 62 instead of 94)     [default: false]
+  -a, --algorithm  hashing algorithm to use                 [default: "SHA256"]
+  -y, --clipboard  copy to clipboard instead of outputting  [default: true]
+  -d, --domain                                              [required]
+  -u, --username                                            [default: "you"]
+
+Missing required arguments: d
 
 ```
 

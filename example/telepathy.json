@@ -1,23 +1,26 @@
 {
-	"//": "Default username -- leave it blank to autodetect",
-	"username": "",
+  "//": "Default username -- leave it blank to autodetect",
+  "username": "",
 
-	"//": "Number of passwords to display by default",
-	"count": 5,
+	"//": "Whether or not to copy output directly to clipboard instead of pipe to STDOUT",
+	"clipboard": true,
 
-	"//": "How long the passwords ought to be",
-	"length": 10,
+  "//": "Number of passwords to display by default",
+  "count": 1,
 
-	"//": "Starting index",
-	"index": 0,
+  "//": "How long the passwords ought to be",
+  "length": 10,
 
-	"//": "Hashing algorithm (MD5, SHA1, SHA224, SHA256, SHA384, SHA512, SHA3, SHA3_224, SHA3_256, SHA3_384, SHA3_512, RIPEMD160)",
-	"algorithm": "SHA256",
+  "//": "Starting index",
+  "index": 0,
 
-	"//": "Don't generate passwords that could break insecure login forms?",
-	"lax": false,
+  "//": "Hashing algorithm (MD5, SHA1, SHA224, SHA256, SHA384, SHA512, SHA3, SHA3_224, SHA3_256, SHA3_384, SHA3_512, RIPEMD160)",
+  "algorithm": "SHA256",
 
-	"//": "Your secret key.  Should be something lengthy and memorable, like a couple sentences from a book you like.",
-	"//": "DO NOT SHARE IT WITH ANYONE!",
-	"secret": ""
+  "//": "Don't generate passwords that could break insecure login forms?",
+  "lax": false,
+
+  "//": "Your secret key.  Should be something lengthy and memorable, like a couple sentences from a book you like.",
+  "//": "DO NOT SHARE IT WITH ANYONE!",
+  "secret": ""
 }
