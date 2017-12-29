@@ -109,7 +109,13 @@ for (var i=argv.index; i<argv.index + argv.count; i++) {
 out = out.join('\n');
 
 if (argv.clipboard) {
-  clipboardy.write(out);
+  clipboardy.write(out)
+    .then(function() {
+      console.log('Wrote to clipboard.');
+    })
+    .catch(function() {
+      console.log('Error writing to clipboard.');
+    });
 } else {
   console.log(out);
 }
