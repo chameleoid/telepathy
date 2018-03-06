@@ -44,8 +44,6 @@ Options:
   -d, --domain                                              [required]
   -u, --username                                            [default: "you"]
 
-Missing required arguments: d
-
 ```
 
 ```
