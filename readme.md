@@ -3,6 +3,8 @@
 [![Builds][]][travis]
 [![Deps][]][gemnasium]
 [![Coverage][]][coveralls]
+[![Receiving][]][liberapay]
+[![Progress][]][liberapay]
 
 Telepathy
 =========
@@ -17,6 +19,9 @@ site-specific passwords across any of your devices.
 [coveralls]: https://coveralls.io/github/chameleoid/telepathy?branch=master
 [Downloads]: https://img.shields.io/npm/dt/telepathy.svg
 [NPM]: https://img.shields.io/npm/v/telepathy.svg
+[Receiving]: https://img.shields.io/liberapay/receives/chameleoid.svg "Liberapay Receiving"
+[Progress]: https://img.shields.io/liberapay/goal/chameleoid.svg "Liberapay Goal Progress"
+[liberapay]: https://liberapay.com/chameleoid
 
 
 ## How does it work?
