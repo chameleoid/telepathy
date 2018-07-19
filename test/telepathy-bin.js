@@ -1,5 +1,6 @@
 var TelepathyTestCLI = require('./lib/telepathytestcli.js');
 var telepathyCLI = new TelepathyTestCLI();
+var clipboardy = require('clipboardy');
 require('should');
 
 describe('telepathy-bin', function() {
@@ -55,5 +56,17 @@ describe('telepathy-bin', function() {
       .config('index').exec('-d example.com', 'r\'3b(L8bvh\nrz80RFR667\n[%^gCi$=Lw\n>|-Ll/mW-a\n1wroDAq=^e\n')
       .config('lax').exec('-d example.com', 'XqQoIZF58B\nRqUBdjJtX7\nyjpwoHtdc0\nwUcC8TBH8k\nJEJC1hffn2\n')
       .config('length').exec('-d example.com', '_[c"R\nz<u9N\nYj0}~\ng:3WG\n`c3q4\n');
+  });
+
+  describe('test clipboard', function() {
+    telepathyCLI
+      .config('default')
+      .exec('-d example.com -y -n 1 -t 0', 'Wrote to clipboard.\n', function() {
+        clipboardy.readSync().should.equal('z<u9N_[c"R');
+      })
+
+      .exec('-d example.com -y -n 1 -t 1', 'Wrote to clipboard.\nClearing clipboard in 1 second...\n', function() {
+        clipboardy.readSync().should.equal(' ');
+      });
   });
 });

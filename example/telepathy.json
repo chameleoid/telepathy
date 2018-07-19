@@ -2,8 +2,11 @@
   "//": "Default username -- leave it blank to autodetect",
   "username": "",
 
-	"//": "Whether or not to copy output directly to clipboard instead of pipe to STDOUT",
-	"clipboard": true,
+  "//": "Whether or not to copy output directly to clipboard instead of pipe to STDOUT",
+  "clipboard": true,
+
+  "//": "Time delay in seconds before clipboard is cleared (`0` or `false` to never time out)",
+  "timeout": 45,
 
   "//": "Number of passwords to display by default",
   "count": 1,

@@ -26,9 +26,10 @@ TelepathyTestCLI.prototype.config = function(config) {
  * Appends a test to the test sequence
  * @param {string} args  String of CLI arguments to pass to telepathy-bin
  * @param {string} expect  Expected result
+ * @param {function} [callback]  Function to be called after process exits
  * @returns {TelepathyTestCLI}
  */
-TelepathyTestCLI.prototype.exec = function(args, expect) {
+TelepathyTestCLI.prototype.exec = function(args, expect, callback) {
   'use strict';
   var config = this._config;
 
@@ -36,8 +37,11 @@ TelepathyTestCLI.prototype.exec = function(args, expect) {
     exec(
       ['./bin/telepathy', '-c ' + config, args].join(' '),
       function(error, stdout, stderr) {
-        if (!error && !stderr)
-          stdout.should.equal(expect);
+        stdout.should.equal(expect);
+
+        if (typeof callback === 'function') {
+          callback();
+        }
 
         done();
       }

@@ -80,6 +80,11 @@ opts = opts.usage('Telepathically manage passwords.\nUsage: $0\nVersion: ' + jso
     alias: 'clipboard',
     default: config.clipboard || false,
   },
+  t: {
+    describe: 'time delay before clipboard is clared',
+    alias: 'timeout',
+    default: config.timeout || 45,
+  },
 });
 
 var argv = opts.argv;
@@ -109,10 +114,32 @@ for (var i=argv.index; i<argv.index + argv.count; i++) {
 out = out.join('\n');
 
 if (argv.clipboard) {
+  var timeout = Math.max(0, argv.timeout);
+
   clipboardy.write(out)
     .then(function() {
       console.log('Wrote to clipboard.');
     })
+
+    .then(function() {
+      if (!timeout) {
+        return;
+      }
+
+      console.log('Clearing clipboard in %d second%s...', timeout, timeout != 1 ? 's' : '');
+
+      return new Promise(function(resolve, reject) {
+        function clear() {
+          // Node.js seems to have a bug where it doesn't correctly pass an
+          // empty string to a child_process' stdin, so this unfortunately
+          // needs to have a printable value passed to work with xsel
+          clipboardy.write(' ').then(resolve).catch(reject);
+        }
+
+        setTimeout(clear, timeout * 1000);
+      });
+    })
+
     .catch(function() {
       console.log('Error writing to clipboard.');
     });
